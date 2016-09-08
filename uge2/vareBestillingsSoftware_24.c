@@ -96,7 +96,7 @@ int main()
       printf("Antal:\n");
       scanf("%d", &antal[counter]);
       system("CLS");
-      if(antal[counter]<5)
+      if(antal[counter]=<5)
       {
         inputError = 0;
       }

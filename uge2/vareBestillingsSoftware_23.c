@@ -27,7 +27,7 @@ int flereVarer = 1;
 int vareNr[maksBest];
 int pris[maksBest];
 int antal[maksBest];
-int total =0;
+int total = 0;
 int inputError = 0;
 
 
@@ -92,7 +92,7 @@ int main()
       printf("Antal:\n");
       scanf("%d", &antal[counter]);
       system("CLS");
-      if(antal[counter]<5)
+      if(antal[counter]=<5)
       {
         inputError = 0;
       }
