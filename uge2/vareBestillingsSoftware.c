@@ -63,15 +63,16 @@ while (flereVarer == 1 && counter < maksBest) {
   } //end of if (maksBestilling)
 
   printf("\n\n\tVareliste:\n");
-
+  
+  int j =0;
   for (int i = 0; i < counter; i++) {
     printf("\t\t=======\n");
     printf("\t\tVare nummer:%d\n",vareNr[i]);
     printf("\t\tAntal:%d\n",antal[i]);
     printf("\t\tPris/stk:%d\n",pris[i]);
-    printf("\t\tSubtotal:%d\n",pris[i]);
-
+    j += antal[i]*pris[i];
   } //end of for loop (print varer)
+  printf("\n\t\ttotal:%d\n",j);
 
 return 1;
 } //end of main
