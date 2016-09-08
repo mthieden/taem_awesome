@@ -1,5 +1,5 @@
 /*
-    Varebestillings software opgave 2.1
+    Varebestillings software opgave 2.4
     Gruppe "taem awesome" (ja det er stavet forkert med vilje)
         s153460 Jonas Ladefoged Holm
         s113070 David Bjerre Bjørklund
@@ -40,17 +40,24 @@ int main()
   opnået vores fastsatte maksimum størrelse af kurven*/
   while (flereVarer == 1 && counter < maksBest) {
 
-    /*scanf funktionen ændrer dynamisk hvor i diverse arrays, den lagrer informationen.
-    dette gør den ved at bruge counter variablen i stedet for et fast tal*/
+    /*Control af at ordren overholder de fastsatte rammer
+    fejl bliver fanget af et do while loop, vha af en if statement der
+    åbner og lukker loopet alt efter om grænseværdierne er i orden,
+    samtidigt bliver brugeren også informeret om fejlen,*/
+
+    //check og indtast varenummer
     do
     {
       printf("Varenummer:\n");
+      /*scanf funktionen ændrer dynamisk hvor i diverse arrays, den lagrer informationen.
+      dette gør den ved at bruge counter variablen i stedet for et fast tal*/
       scanf("%d", &vareNr[counter]);
       system("CLS");
+
       if(vareNr[counter]>3 && vareNr[counter]<23)
       {
         inputError = 0;
-      }  
+      }
       else
       {
         inputError = 1;
@@ -58,7 +65,8 @@ int main()
       }
     }
     while (inputError);
-   
+
+    //check og indtast pris
     do
     {
       printf("Pris:\n");
@@ -67,7 +75,7 @@ int main()
       if(pris[counter]>1 && pris[counter]<100)
       {
         inputError = 0;
-      }  
+      }
       else
       {
         inputError = 1;
@@ -76,6 +84,7 @@ int main()
      }
     while (inputError);
 
+    //check og indtast antal
     do
     {
       printf("Antal:\n");
@@ -84,7 +93,7 @@ int main()
       if(antal[counter]<5)
       {
         inputError = 0;
-      }  
+      }
       else
       {
         inputError = 1;
@@ -92,7 +101,7 @@ int main()
       }
      }
      while (inputError);
- 
+
    //Tæller at nu har kunden tilføjet en bestilling
     counter++;
 
@@ -136,11 +145,11 @@ tidligere værdier i vores arrays*/
       system("CLS");
   } //end of if (maksBestilling)
 
-  /*Så printer vi vores Vareliste til standard output
+  /*Så printer vi vores Faktura til standard output
   vi printer alle forsendelser vha vores for loop, der har
   en variabel "i", der bruges til at hente den passende værdi
   i de diverse arrays*/
-  printf("\n\n\tVareliste:\n");
+  printf("\n\n\tFaktura:\n");
 
 
   for (int i = 0; i < counter; i++) {
