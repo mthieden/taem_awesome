@@ -1,6 +1,7 @@
 /* Varebestillings software opgave 2.1
 */
 #include<stdio.h>
+#include<>
 //#define maksBest 10
 
 /*
@@ -34,21 +35,32 @@ while (flereVarer == 1 && counter < maksBest) {
         case 1:
           flereVarer = 1;
           manglerSvar = 0;
-          printf("hej Y y\n");
           break;
         case 0:
           flereVarer = 0;
           manglerSvar = 0;
-          printf("hej N n\n");
           break;
         default:
-          printf("Yo slem stil der! \n Brug nu bare 1 for flere varer eller 0 for at afslutte indtastningen \n");
+          printf("Dit svar skal enten være 1 eller 0,\nprøv igen\n");
           break;
       } //end of switch(svar)
         //goto #YOLO
     } //end of while(manglerSvar)
+  } //end of while (flere varer)
 
-  } //end of while
+  if (counter >= maksBest) {
+      printf("Indkøbskurv fyldt! \nFaktura printes\n\n\n");
+  } //end of if (maksBestilling)
+
+  printf("\tVareliste:\n");
+
+  for (int i = 0; i < counter; i++) {
+    printf("\t\t=======\n");
+    printf("\t\tVare nummer:%d\n",vareNr[i]);
+    printf("\t\tAntal:%d\n",antal[i]);
+    printf("\t\tPris/stk:%d\n",pris[i]);
+
+  } //end of for loop (print varer)
 
 return 1;
 } //end of main
