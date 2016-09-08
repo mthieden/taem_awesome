@@ -1,0 +1,21 @@
+Varenummer:
+Pris:
+Antal:
+Vil du tilføje flere varer? (1/0)
+Varenummer:
+Pris:
+Antal:
+Vil du tilføje flere varer? (1/0)
+
+
+	Vareliste:
+		=======
+		Vare nummer:12
+		Antal:14
+		Pris/stk:13
+		=======
+		Vare nummer:23
+		Antal:25
+		Pris/stk:24
+
+		total:782
