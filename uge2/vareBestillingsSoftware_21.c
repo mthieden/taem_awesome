@@ -27,12 +27,7 @@ int flereVarer = 1;
 int vareNr[maksBest];
 int pris[maksBest];
 int antal[maksBest];
-int inputError = 0;
-float total = 0;
-int forsendelse = 0;
-float rabat;
-int antalTotal = 0;
-
+int total =0;
 
 /*vores main function*/
 int main()
@@ -47,58 +42,19 @@ int main()
 
     /*scanf funktionen ændrer dynamisk hvor i diverse arrays, den lagrer informationen.
     dette gør den ved at bruge counter variablen i stedet for et fast tal*/
-    do
-    {
-      printf("Varenummer:\n");
-      scanf("%d", &vareNr[counter]);
-      system("CLS");
-      if(vareNr[counter]>3 && vareNr[counter]<23)
-      {
-        inputError = 0;
-      }  
-      else
-      {
-        inputError = 1;
-        printf("fejl i varenummer\n");
-      }
-    }
-    while (inputError);
-   
-    do
-    {
-      printf("Pris:\n");
-      scanf("%d", &pris[counter]);
-      system("CLS");
-      if(pris[counter]>1 && pris[counter]<100)
-      {
-        inputError = 0;
-      }  
-      else
-      {
-        inputError = 1;
-        printf("fejl i pris\n");
-      }
-     }
-    while (inputError);
+    printf("Varenummer:\n");
+    scanf("%d", &vareNr[counter]);
+    system("CLS");
 
-    do
-    {
-      printf("Antal:\n");
-      scanf("%d", &antal[counter]);
-      system("CLS");
-      if(antal[counter]<5)
-      {
-        inputError = 0;
-      }  
-      else
-      {
-        inputError = 1;
-        printf("fejl i antal\n");
-      }
-     }
-     while (inputError);
- 
-   //Tæller at nu har kunden tilføjet en bestilling
+    printf("Pris:\n");
+    scanf("%d", &pris[counter]);
+    system("CLS");
+
+    printf("Antal:\n");
+    scanf("%d", &antal[counter]);
+    system("CLS");
+
+    //Tæller at nu har kunden tilføjet en bestilling
     counter++;
 
     /*Kunden beslutter om han/hende vil tilføje mere til bestillingen*/
@@ -141,32 +97,25 @@ tidligere værdier i vores arrays*/
       system("CLS");
   } //end of if (maksBestilling)
 
+  /*Så printer vi vores Vareliste til standard output
+  vi printer alle forsendelser vha vores for loop, der har
+  en variabel "i", der bruges til at hente den passende værdi
+  i de diverse arrays*/
+  printf("\n\n\tVareliste:\n");
+
+
   for (int i = 0; i < counter; i++) {
+    /*der bliver pyntet, /t bruges til at gøre outputtet mere læsbart
+    sammen med det følgende printf statement*/
     printf("\t\t=======\n");
     printf("\t\tVare nummer:%d\n",vareNr[i]);
     printf("\t\tAntal:%d\n",antal[i]);
     printf("\t\tPris/stk:%d\n",pris[i]);
+
     total += antal[i]*pris[i];
-    antalTotal += antal[i];
   } //end of for loop (print varer)
-  
-
-  printf("\n\t\tsamlet pris:%f\n",total);
-  if(total > 500)
-  {
-    rabat = total * 0.1;
-    total *= 0.9;
-  }
-  else if (total < 200 || antalTotal < 3)
-  {
-    total += 50;
-    forsendelse += 50;
-  }
-  
-  printf("\n\t\tforsendelse:%d\n",forsendelse);
-  printf("\n\t\trabat:%f\n",rabat);
-  printf("\n\t\ttotal pris:%f\n",total);
-
+  /*printer totalprisen*/
+  printf("\n\t\ttotal:%d\n",total);
 
 return 1;
 } //end of main
