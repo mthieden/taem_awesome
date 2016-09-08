@@ -6,10 +6,10 @@
         s164920 Markus Visvaldis Ingemann Thieden
 
 
-Includerer relevante libraries
+Inkluderer relevante libraries
 Og definerer maksBest(maksbestilling) til 10
-for optimering af kode, vores arrays skal have defineret en størrelse fra start,
-denne definition gør at vi kan ændre denne størrelse nemt, et sted, bliver også brugt
+for optimering af kode. Vores arrays skal have defineret en størrelse fra start.
+Denne definition gør at vi kan ændre denne størrelse nemt, et sted. Bliver også brugt
 som en begrænsning af bestillingslisten.
 */
 #include<stdio.h>
@@ -56,8 +56,7 @@ int main()
     do
     {
       printf("Varenummer:\n");
-      /*scanf funktionen ændrer dynamisk hvor i diverse arrays, den lagrer informationen.
-      dette gør den ved at bruge counter variablen i stedet for et fast tal*/
+      /* counter variablen bruges som index i divere arrays og ændrer dynamisk hvor informationen lagres.*/
       scanf("%d", &vareNr[counter]);
       system("CLS");
 
@@ -109,15 +108,13 @@ int main()
      }
      while (inputError);
 
-   //Tæller at nu har kunden tilføjet en bestilling
+   //Tæller at kunden har tilføjet en bestilling
     counter++;
 
-    /*Kunden beslutter om han/hende vil tilføje mere til bestillingen*/
+    /*Kunden beslutter om han/hun vil tilføje flere bestillinger*/
     printf("Vil du tilføje flere varer? (1/0)\n");
 
-    /* manglerSvar og while loopet sørger for at vi ikke går videre indtil at
-    at vores switch case, har godkendt besvarelsen der enten skal være 1
-    eller 0*/
+    /* manglerSvar og while loopet sørger for at spørge om input indtil dette godkendes i switch case (enten 0 eller 1.*/
     int manglerSvar = 1;
 
       while (manglerSvar) {
@@ -142,8 +139,9 @@ int main()
   } //end of while (flereVarer)
 
 /*En fejl meddelelse til brugeren der kun viser sig hvis kunden ønsker at tilføje
-flere bestillinger end der er plads til, dette er sat i stand for at vi ikke overskriver
-tidligere værdier i vores arrays*/
+flere bestillinger end der er plads til, dette er sat i stand for ikke at overskriver
+tidligere værdier i vores arrays eller risikere overflow*/
+    
   if (counter >= maksBest) {
       printf("Indkøbskurv fyldt! \nFaktura printes!\nTryk en vilkaarlig tast for at fortsaette:\n");
       /*PAUSE bruges windows specifikt til at lade brugeren af programmet
@@ -152,29 +150,29 @@ tidligere værdier i vores arrays*/
       system("CLS");
   } //end of if (maksBestilling)
 
-  /*Så printer vi vores Faktura til standard output
-  vi printer alle forsendelser vha vores for loop, der har
-  en variabel "i", der bruges til at hente den passende værdi
-  i de diverse arrays*/
+  /*Faktura printes til standard output.
+  alle bestillinger vha vores for-loop, der har
+  en variabel "i", der bruges som index, til at hente den passende værdi
+  i arrays*/
   printf("\n\n\tFaktura:\n");
 
 
   for (int i = 0; i < counter; i++) {
-    /*der bliver pyntet, /t bruges til at gøre outputtet mere læsbart
+    /*Outout formateres. '/t' (tab) bruges til at gøre outputtet mere læsbart
     sammen med det følgende printf statement*/
     printf("\t=======================\n");
-    printf("\t\tVare nummer:%d\n",vareNr[i]);
-    printf("\t\tAntal:%d\n",antal[i]);
-    printf("\t\tPris/stk:%d\n",pris[i]);
+    printf("\t\tVare nummer:%d\n", vareNr[i]);
+    printf("\t\tAntal:%d\n", antal[i]);
+    printf("\t\tPris/stk:%d\n", pris[i]);
 
     total += antal[i]*pris[i];
     //vi har brug for at beregne hvor mange ting der er bestilt
     antalTotal += antal[i];
   } //end of for loop (print varer)
 
-  //vi viser hvad prisen er før forsendelse og evt. rabatter
-  printf("\n\t\tsamlet pris:%f\n",total);
-  //og beregner rabat og fragt efter fastsatte krav
+  //Prisen udskrives før forsendelse og evt. rabatter
+  printf("\n\t\tsamlet pris:%f\n", total);
+  //rabat og fragt beregnes efter fastsatte krav
   if(total > 500)
   {
     rabat = total * 0.1;
@@ -187,9 +185,9 @@ tidligere værdier i vores arrays*/
   } //end of else if
 
   //Det fulde resultat, dvs rabat, forsendelse osv skrives
-  printf("\n\t\tforsendelse:%d\n",forsendelse);
-  printf("\n\t\trabat:%f\n",rabat);
-  printf("\n\t\ttotal pris:%f\n",total);
+  printf("\n\t\tforsendelse:%d\n", forsendelse);
+  printf("\n\t\trabat:%f\n", rabat);
+  printf("\n\t\ttotal pris:%f\n", total);
 
 
 return 1;
