@@ -102,12 +102,12 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 371,
-									"top": 122,
+									"top": 109,
 									"width": 115,
-									"height": 52,
+									"height": 65,
 									"autoResize": false,
 									"underline": false,
-									"text": "int counter = 0;    int maksBest = 10;    int flereVarer = 1;  int total = 0;",
+									"text": "int counter = 0;    int maksBest = 10;    int flereVarer = 1;  float total = 0; int antalTotal = 0;",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5
 								}
@@ -122,9 +122,9 @@
 							"containerChangeable": false,
 							"containerExtending": false,
 							"left": 328,
-							"top": 112,
+							"top": 99,
 							"width": 201,
-							"height": 72,
+							"height": 85,
 							"autoResize": false,
 							"nameLabel": {
 								"$ref": "AAAAAAFXCMCSfnLN5BI="
@@ -435,7 +435,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 438,
-									"top": 85,
+									"top": 78,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -466,7 +466,7 @@
 								"$ref": "AAAAAAFXCMA+VHK/Sjk="
 							},
 							"lineStyle": 2,
-							"points": "424:72;424:112",
+							"points": "424:72;424:99",
 							"nameLabel": {
 								"$ref": "AAAAAAFXCM31gXMvdC4="
 							}
@@ -2034,7 +2034,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 362,
-									"top": 1130,
+									"top": 1226,
 									"width": 100,
 									"height": 13,
 									"autoResize": false,
@@ -2054,80 +2054,14 @@
 							"containerChangeable": false,
 							"containerExtending": false,
 							"left": 352,
-							"top": 1120,
+							"top": 1216,
 							"width": 120,
-							"height": 40,
+							"height": 33,
 							"autoResize": false,
 							"nameLabel": {
 								"$ref": "AAAAAAFXCNoIsnSGrGk="
 							},
 							"wordWrap": true
-						},
-						{
-							"_type": "FCFlowView",
-							"_id": "AAAAAAFXCNoaWnSOvgo=",
-							"_parent": {
-								"$ref": "AAAAAAFXCL/oW3K5cqY="
-							},
-							"model": {
-								"$ref": "AAAAAAFXCNoaWnSMR+4="
-							},
-							"subViews": [
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAFXCNoaWnSP6Ro=",
-									"_parent": {
-										"$ref": "AAAAAAFXCNoaWnSOvgo="
-									},
-									"model": {
-										"$ref": "AAAAAAFXCNoaWnSMR+4="
-									},
-									"visible": true,
-									"enabled": true,
-									"lineColor": "#000000",
-									"fillColor": "#ffffff",
-									"fontColor": "#000000",
-									"font": "Arial;13;0",
-									"showShadow": true,
-									"containerChangeable": false,
-									"containerExtending": false,
-									"left": 423,
-									"top": 1096,
-									"width": 32,
-									"height": 13,
-									"autoResize": false,
-									"alpha": 1.741530711302709,
-									"distance": 29.427877939124322,
-									"hostEdge": {
-										"$ref": "AAAAAAFXCNoaWnSOvgo="
-									},
-									"edgePosition": 1,
-									"underline": false,
-									"text": "False",
-									"horizontalAlignment": 2,
-									"verticalAlignment": 5
-								}
-							],
-							"visible": true,
-							"enabled": true,
-							"lineColor": "#000000",
-							"fillColor": "#ffffff",
-							"fontColor": "#000000",
-							"font": "Arial;13;0",
-							"showShadow": true,
-							"containerChangeable": false,
-							"containerExtending": false,
-							"head": {
-								"$ref": "AAAAAAFXCNoIsXSFRqE="
-							},
-							"tail": {
-								"$ref": "AAAAAAFXCNT+T3Pm6sg="
-							},
-							"lineStyle": 2,
-							"points": "410:1095;410:1120",
-							"nameLabel": {
-								"$ref": "AAAAAAFXCNoaWnSP6Ro="
-							}
 						},
 						{
 							"_type": "FCProcessView",
@@ -2157,10 +2091,10 @@
 									"left": 570,
 									"top": 890,
 									"width": 157,
-									"height": 13,
+									"height": 26,
 									"autoResize": false,
 									"underline": false,
-									"text": "total += pris[i] * antal[i]",
+									"text": "total += pris[i] * antal[i]; antalTotal += antal[i];",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5
 								}
@@ -2177,7 +2111,7 @@
 							"left": 560,
 							"top": 880,
 							"width": 177,
-							"height": 33,
+							"height": 46,
 							"autoResize": false,
 							"nameLabel": {
 								"$ref": "AAAAAAFXCcMbKiEevIQ="
@@ -2213,7 +2147,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 634,
-									"top": 925,
+									"top": 931,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -2244,7 +2178,7 @@
 								"$ref": "AAAAAAFXCNbp63QfnxA="
 							},
 							"lineStyle": 2,
-							"points": "649:952;649:912",
+							"points": "649:952;649:925",
 							"nameLabel": {
 								"$ref": "AAAAAAFXCcPOFyEyGBU="
 							}
@@ -2345,7 +2279,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFXCL/oW3K4n0E="
 					},
-					"name": "int counter = 0;    int maksBest = 10;    int flereVarer = 1;  int total = 0;",
+					"name": "int counter = 0;    int maksBest = 10;    int flereVarer = 1;  float total = 0; int antalTotal = 0;",
 					"ownedElements": [
 						{
 							"_type": "FCFlow",
@@ -2619,20 +2553,6 @@
 							"target": {
 								"$ref": "AAAAAAFXCNbp63QdOXY="
 							}
-						},
-						{
-							"_type": "FCFlow",
-							"_id": "AAAAAAFXCNoaWnSMR+4=",
-							"_parent": {
-								"$ref": "AAAAAAFXCNT+T3PkFRg="
-							},
-							"name": "False",
-							"source": {
-								"$ref": "AAAAAAFXCNT+T3PkFRg="
-							},
-							"target": {
-								"$ref": "AAAAAAFXCNoIsXSDYg0="
-							}
 						}
 					]
 				},
@@ -2740,7 +2660,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFXCL/oW3K4n0E="
 					},
-					"name": "total += pris[i] * antal[i]",
+					"name": "total += pris[i] * antal[i]; antalTotal += antal[i];",
 					"ownedElements": [
 						{
 							"_type": "FCFlow",
