@@ -29,14 +29,14 @@ while (flereVarer == 1 && counter < maksBest) {
 
     while (manglerSvar) {
       int svar;
-      scanf("%d\n", &svar);
+      scanf("%d", &svar);
       switch (svar) {
-        case '1':
+        case 1:
           flereVarer = 1;
           manglerSvar = 0;
           printf("hej Y y\n");
           break;
-        case '0':
+        case 0:
           flereVarer = 0;
           manglerSvar = 0;
           printf("hej N n\n");
