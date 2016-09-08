@@ -52,7 +52,7 @@ while (flereVarer == 1 && counter < maksBest) {
           printf("Dit svar skal enten være 1 eller 0,\nprøv igen\n");
           break;
       } //end of switch(svar)
-        //goto #YOLO
+
     } //end of while(manglerSvar)
   } //end of while (flere varer)
 
