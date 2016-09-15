@@ -59,6 +59,8 @@ int main (void){
     case multiplied:
       res = multiplication(tal1,tal2);
       break;
+      case intet:
+      break;
   }
 
   // Print result
