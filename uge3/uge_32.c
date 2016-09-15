@@ -1,18 +1,28 @@
+/* 
+
+Uge 3 opgave 2
+This is a simple calculator taking two numbers and multiply or add them together.
+Gruppe "taem awesome" (ja det er stavet forkert med vilje)
+    s153460 Jonas Ladefoged Holm
+    s113070 David Bjerre Bjørklund
+    s164920 Markus Visvaldis Ingemann Thieden
+*/
+
 #include<stdio.h>
 #include<math.h>
 
 int main (void){
 
-  printf("Velkommen til lommeregneren!\n");
+  printf("Welcome to the calculator!\n");
 
   double tal1;
   double tal2;
   double res;
 
-  printf("Indtast det første tal: ");
+  printf("Input first number: ");
   scanf(" %lf", &tal1);
 
-  printf("Indtast det andet tal: ");
+  printf("Input second number: ");
   scanf(" %lf", &tal2);
 
   printf("%.2lf\n", tal1);
@@ -27,6 +37,8 @@ int main (void){
   while (currentValg != multiplied && currentValg != added){
     int valg;
     scanf(" %d", &valg);
+
+    // Training the use of enums...
     if (valg == 1){
       currentValg = added;
     } else if (valg == 2) {
@@ -36,6 +48,7 @@ int main (void){
     }
   }
 
+  // Doing the calculations
   switch (currentValg) {
     case added:
       res = tal1 + tal2;
@@ -45,6 +58,7 @@ int main (void){
       break;
   }
 
+  // Print result
   printf("%.2lf\n",res);
 
   return(0);
