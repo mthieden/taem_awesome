@@ -1,6 +1,17 @@
-#include<stdio.h>
-#include<math.h>
+/* 
 
+Uge 3 opgave 2
+This is a simple calculator taking two numbers and multiply or add them together.
+Gruppe "taem awesome" (ja det er stavet forkert med vilje)
+    s153460 Jonas Ladefoged Holm
+    s113070 David Bjerre Bjørklund
+    s164920 Markus Visvaldis Ingemann Thieden
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+//Function prototypes
 double addition(double a, double b);
 double multiplication(double a, double b);
 
@@ -24,7 +35,7 @@ int main (void){
 
   printf("Should they be:\n1: Added together? \n2: Or multiplied?\n");
 
-  //for at træne brugen af enums gør jeg brug af dem her
+  // Training the use of enums...
   enum brugerValg {intet, multiplied, added};
   enum brugerValg currentValg = intet;
 
@@ -40,6 +51,7 @@ int main (void){
     }
   }
 
+  // Doing the calculations
   switch (currentValg) {
     case added:
       res = addition(tal1,tal2);
@@ -49,17 +61,19 @@ int main (void){
       break;
   }
 
+  // Print result
   printf("%.2lf\n",res);
 
   return(0);
 
 }
 
-//her er de 2 funktioner der erstatter funktionaliteten der før var i main
+// Takes two arguments and returns sum
 double addition(double a, double b){
   return a + b;
 }
 
+// Takes two arguments and returns product.
 double multiplication(double a, double b){
   return a * b;
 }
