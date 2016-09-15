@@ -1,35 +1,51 @@
 #include <stdio.h>
 #include <string.h>
 
+// Enum is declared
 enum days {mon=1, tue, wed, thu, fri, sat, sun};
+
+// Prototype for function scan_input
 enum days scan_input(char* input);
 
 int main(){
     
+    // Declare char array (string)
     char input[8];
     
-    printf("input din ønsket dag\n");
+    // Ask for input
+    printf("Indtast dag\n");
     scanf("%s",input);
-    printf("\n%s\n",input);
-    enum days lol = scan_input(input);
+
+    // Translate string input to enum reference
+    enum days scanDays = scan_input(input);
     
-    if(!lol)
+    // If an error has occured, returns an error, and closes the program.
+    // That is if scan_input returns 0;
+    if(!scanDays)
     {
-    printf("fejl :(");
-    return 1;
+        printf("Inkorrekt indtastning");
+        return 1;
     }
-    printf("din dag er nummer %d i ugen\n",lol);
+
+    // Udskriv brugerens input samt denne dag nr.
+    printf("%s er nummer %d i ugen\n",input,scanDays);
 
     return 0;
 }
 
-
+/*  Function enum days scan_input(char* input)
+    Arguments: takes a string
+    Returns enum reference coresponding to string.
+*/
 enum days scan_input(char* input)
-{
+{   
+    // Declare enum
     enum days retday;
+    //uses strcmp from string.h to compare input to predefined strings.
     if(!(strcmp(input,"mandag")))
     {
         retday = mon;
+        //Return enum with coresponding value
         return retday;
     } 
     else if(!(strcmp(input,"tirsdag")))
@@ -64,6 +80,7 @@ enum days scan_input(char* input)
     }
     else
     {
+     // Return an 'error'
      return 0;
     }
 }
