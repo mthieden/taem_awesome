@@ -23,7 +23,7 @@ int main(){
     // That is if scan_input returns 0;
     if(!scanDays)
     {
-        printf("Inkorrekt indtastning");
+        printf("Inkorrekt indtastning\n");
         return 1;
     }
 
