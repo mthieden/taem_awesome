@@ -1,6 +1,28 @@
 #include <stdio.h>
 #include <string.h>
+
 enum days {mon=1, tue, wed, thu, fri, sat, sun};
+enum days scan_input(char* input);
+
+int main(){
+    
+    char input[8];
+    
+    printf("input din ønsket dag\n");
+    scanf("%s",input);
+    printf("\n%s\n",input);
+    enum days lol = scan_input(input);
+    
+    if(!lol)
+    {
+    printf("fejl :(");
+    return 1;
+    }
+    printf("din dag er nummer %d i ugen\n",lol);
+
+    return 0;
+}
+
 
 enum days scan_input(char* input)
 {
@@ -44,22 +66,4 @@ enum days scan_input(char* input)
     {
      return 0;
     }
-}
-int main(){
-    
-    char input[8];
-    
-    printf("input din ønsket dag\n");
-    scanf("%s",input);
-    printf("\n%s\n",input);
-    enum days lol = scan_input(input);
-    
-    if(!lol)
-    {
-    printf("fejl :(");
-    return 1;
-    }
-    printf("din dag er nummer %d i ugen\n",lol);
-
-    return 0;
 }
