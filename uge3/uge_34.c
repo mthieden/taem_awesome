@@ -21,21 +21,21 @@ int main()
 {
     // we start with som simple calculations
     printf("We start our typcasting with som simple integers\n");
-    printf("x = y + 6;\ny = (int)x/4;\n");
+    printf("x = y + 6;\ny = (int)x/4;\n\n");
     x = y + 6;
     // we use float to redefine a int, this is only possible using typcasting 
     y = (int)x/4;
 
     // it's not nessesary to typecast a simple type to a more advanced type a.i. int to float 
     printf("then we show that typcasting is not nessary, when going from a simple to a advanced type\n");
-    printf("a = x / 3.2;\nb = x + y;\n");
+    printf("a = x / 3.2;\nb = x + y;\n\n");
     a = x / 3.2;
     b = x + y;
     
     // we use chars and typecast it as unsinged int
     printf("\n Now we try with char and unsinged\n");
     printf("This is our char:  %c\n",ch);
-    printf("now we print it as unsigned: 0x%08x\n",(unsigned int)ch);
+    printf("now we print it as unsigned: 0x%08x\n\n",(unsigned int)ch);
     
     // Here we use null pointer which can be typecasted as all types
     printf("Here we use null pointers, which is an amazing type who can be typecasted to all types\n");
