@@ -27,7 +27,7 @@ int flereVarer = 1;
 int vareNr[maksBest];
 int pris[maksBest];
 int antal[maksBest];
-int total =0;
+int total = 0;
 
 /*vores main function*/
 int main()

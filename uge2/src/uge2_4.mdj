@@ -813,9 +813,9 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 384,
+									"left": 383,
 									"top": 476,
-									"width": 25,
+									"width": 26,
 									"height": 13,
 									"autoResize": false,
 									"alpha": -4.458714690105056,
@@ -1415,9 +1415,9 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 507,
+									"left": 506,
 									"top": 855,
-									"width": 25,
+									"width": 26,
 									"height": 13,
 									"autoResize": false,
 									"alpha": -1.8409499827421096,
@@ -1970,9 +1970,9 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 527,
+									"left": 526,
 									"top": 1288,
-									"width": 25,
+									"width": 26,
 									"height": 13,
 									"autoResize": false,
 									"alpha": -4.9208537182337055,
@@ -2578,72 +2578,6 @@
 						},
 						{
 							"_type": "FCFlowView",
-							"_id": "AAAAAAFXCeh4+iGwRf8=",
-							"_parent": {
-								"$ref": "AAAAAAFXCL/oW3K5cqY="
-							},
-							"model": {
-								"$ref": "AAAAAAFXCeh4+iGuTNM="
-							},
-							"subViews": [
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAFXCeh4+iGxc1c=",
-									"_parent": {
-										"$ref": "AAAAAAFXCeh4+iGwRf8="
-									},
-									"model": {
-										"$ref": "AAAAAAFXCeh4+iGuTNM="
-									},
-									"visible": true,
-									"enabled": true,
-									"lineColor": "#000000",
-									"fillColor": "#ffffff",
-									"fontColor": "#000000",
-									"font": "Arial;13;0",
-									"showShadow": true,
-									"containerChangeable": false,
-									"containerExtending": false,
-									"left": 484,
-									"top": 1547,
-									"width": 32,
-									"height": 13,
-									"autoResize": false,
-									"alpha": 1.5707963267948966,
-									"distance": 15,
-									"hostEdge": {
-										"$ref": "AAAAAAFXCeh4+iGwRf8="
-									},
-									"edgePosition": 1,
-									"underline": false,
-									"text": "False",
-									"horizontalAlignment": 2,
-									"verticalAlignment": 5
-								}
-							],
-							"visible": true,
-							"enabled": true,
-							"lineColor": "#000000",
-							"fillColor": "#ffffff",
-							"fontColor": "#000000",
-							"font": "Arial;13;0",
-							"showShadow": true,
-							"containerChangeable": false,
-							"containerExtending": false,
-							"head": {
-								"$ref": "AAAAAAFXCeehAyGZAyw="
-							},
-							"tail": {
-								"$ref": "AAAAAAFXCec+DSGLcI0="
-							},
-							"lineStyle": 2,
-							"points": "472:1568;528:1568",
-							"nameLabel": {
-								"$ref": "AAAAAAFXCeh4+iGxc1c="
-							}
-						},
-						{
-							"_type": "FCFlowView",
 							"_id": "AAAAAAFXCejB/iG9zQM=",
 							"_parent": {
 								"$ref": "AAAAAAFXCL/oW3K5cqY="
@@ -2670,9 +2604,9 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 424,
+									"left": 423,
 									"top": 1524,
-									"width": 25,
+									"width": 26,
 									"height": 13,
 									"autoResize": false,
 									"alpha": 1.614246615083217,
@@ -2736,9 +2670,9 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 592,
+									"left": 591,
 									"top": 1528,
-									"width": 25,
+									"width": 26,
 									"height": 13,
 									"autoResize": false,
 									"alpha": 1.6078158407349075,
@@ -3612,9 +3546,9 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 735,
+									"left": 734,
 									"top": 415,
-									"width": 27,
+									"width": 28,
 									"height": 13,
 									"autoResize": false,
 									"alpha": 1.5707963267948966,
@@ -4264,20 +4198,6 @@
 					},
 					"name": "total *= 0.9;     rabat = total * 0.1;",
 					"ownedElements": [
-						{
-							"_type": "FCFlow",
-							"_id": "AAAAAAFXCeh4+iGuTNM=",
-							"_parent": {
-								"$ref": "AAAAAAFXCec+DSGJ02g="
-							},
-							"name": "False",
-							"source": {
-								"$ref": "AAAAAAFXCec+DSGJ02g="
-							},
-							"target": {
-								"$ref": "AAAAAAFXCeehAyGXz6c="
-							}
-						},
 						{
 							"_type": "FCFlow",
 							"_id": "AAAAAAFXCemcOyH+uIQ=",
