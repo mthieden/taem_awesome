@@ -8,17 +8,20 @@ Gruppe "taem awesome" (ja det er stavet forkert med vilje)
     s164920 Markus Visvaldis Ingemann Thieden
 */
 
-#include<stdio.h>
-#include<math.h>
+#include <stdio.h>
+#include <math.h>
 
 int main (void){
 
+  //Declare variables
   printf("Welcome to the calculator!\n");
 
   double tal1;
   double tal2;
   double res;
 
+
+  // User input
   printf("Input first number: ");
   scanf(" %lf", &tal1);
 
@@ -30,7 +33,7 @@ int main (void){
 
   printf("Should they be:\n1: Added together? \n2: Or multiplied?\n");
 
-  //for at træne brugen af enums gør jeg brug af dem her
+  // To excercise in the functionality of enums...
   enum brugerValg {intet, multiplied, added};
   enum brugerValg currentValg = intet;
 
