@@ -1,0 +1,7 @@
+Velkommen til lommeregneren!
+Indtast det første tal: Indtast det andet tal: 10.00
+40.00
+Should they be:
+1: Added together? 
+2: Or multiplied?
+50.00

@@ -1,0 +1,1 @@
+output.txt<./uge_33<input.txt
