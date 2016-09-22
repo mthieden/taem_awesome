@@ -87,10 +87,38 @@ int main()
   if (counter >= maksBest) {
       printf("Indkøbskurv fyldt! \nFaktura printes!\nTryk en vilkaarlig tast for at fortsaette:\n");
   }
+  bobble_sort(cur_ordre, counter);
   print_ordre(cur_ordre,counter);
 
 return 1;
 }
+
+
+void bobble_sort(struct kundeordre array[], int length)
+{
+    int swapped = 1;
+    struct kundeordre temp;
+    while (swapped)
+    {
+        swapped = 0;
+        for(int i = 1; i < length; i++)
+        {
+            if (array[i].vareNr < array[i-1].vareNr)
+            {
+                temp = array[i];
+                array[i] = array[i-1];
+                array[i-1] = temp;
+                swapped = 1;
+            }
+
+        }
+
+    length--;
+    }
+
+}
+
+
 
 
 void print_lager(struct lagervare lager[])

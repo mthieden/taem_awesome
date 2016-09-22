@@ -43,7 +43,7 @@ struct lagervare firmaLager[] = {{.vareNr = 1, .pris = 27, .beskrivelse = "Panam
 //længden af lager_len beregnet ved størrelse i bit / størrelsen af et element i bit
 int lager_len = sizeof(firmaLager)/sizeof(firmaLager[0]);
 
-
+void bobble_sort(struct kundeordre array[], int length);
 
 void print_lager(struct lagervare lager[]);
 
