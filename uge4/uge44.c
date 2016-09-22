@@ -197,8 +197,6 @@ void print_ordre(struct kundeordre ordre[], int count)
     //rabat og fragt beregnes efter fastsatte krav
     if(total > 500)
     {
-        total += 50;
-        fors +=50;
         rabat = total * 0.1;
         total *= 0.9;
     } //end of if
