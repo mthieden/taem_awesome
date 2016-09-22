@@ -683,10 +683,10 @@
 									"left": 490,
 									"top": 474,
 									"width": 84,
-									"height": 26,
+									"height": 39,
 									"autoResize": false,
 									"underline": false,
-									"text": "Udskriv bestillingsliste",
+									"text": "Udskriv bestillingsliste og total",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5
 								}
@@ -703,7 +703,7 @@
 							"left": 480,
 							"top": 464,
 							"width": 104,
-							"height": 46,
+							"height": 59,
 							"autoResize": false,
 							"nameLabel": {
 								"$ref": "AAAAAAFXUJ+EJyc86tM="
@@ -2403,7 +2403,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFXUG8QmSY6Twg="
 					},
-					"name": "Udskriv bestillingsliste"
+					"name": "Udskriv bestillingsliste og total"
 				},
 				{
 					"_type": "FCProcess",

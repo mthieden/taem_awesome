@@ -3454,6 +3454,61 @@
 							"nameLabel": {
 								"$ref": "AAAAAAFXUQzR+nY89Ek="
 							}
+						},
+						{
+							"_type": "FCDataView",
+							"_id": "AAAAAAFXUR8yOArocxI=",
+							"_parent": {
+								"$ref": "AAAAAAFXUG8QmiY7UFI="
+							},
+							"model": {
+								"$ref": "AAAAAAFXUR8yNwrmH3w="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAFXUR8yOQrpvy4=",
+									"_parent": {
+										"$ref": "AAAAAAFXUR8yOArocxI="
+									},
+									"visible": true,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 1390,
+									"top": 346,
+									"width": 156,
+									"height": 91,
+									"autoResize": false,
+									"underline": false,
+									"text": "struct forsendelse {char kat, float pris}; forsendelse a[5]={{ .kat = 'A', .pris = 25} ,{.kat = 'B', .pris = 35},{.kat = 'C' , .pris = 50},{.kat = 'D', .pris = 100}, {.kat = 'E', pris = 200}}",
+									"horizontalAlignment": 2,
+									"verticalAlignment": 5
+								}
+							],
+							"visible": true,
+							"enabled": true,
+							"lineColor": "#000000",
+							"fillColor": "#ffffff",
+							"fontColor": "#000000",
+							"font": "Arial;13;0",
+							"showShadow": true,
+							"containerChangeable": false,
+							"containerExtending": false,
+							"left": 1336,
+							"top": 336,
+							"width": 264,
+							"height": 113,
+							"autoResize": false,
+							"nameLabel": {
+								"$ref": "AAAAAAFXUR8yOQrpvy4="
+							},
+							"wordWrap": true
 						}
 					]
 				},
@@ -4114,6 +4169,14 @@
 							}
 						}
 					]
+				},
+				{
+					"_type": "FCData",
+					"_id": "AAAAAAFXUR8yNwrmH3w=",
+					"_parent": {
+						"$ref": "AAAAAAFXUG8QmSY6Twg="
+					},
+					"name": "struct forsendelse {char kat, float pris}; forsendelse a[5]={{ .kat = 'A', .pris = 25} ,{.kat = 'B', .pris = 35},{.kat = 'C' , .pris = 50},{.kat = 'D', .pris = 100}, {.kat = 'E', pris = 200}}"
 				}
 			]
 		}
