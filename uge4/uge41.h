@@ -17,7 +17,7 @@ struct lagervare
 {
     int vareNr;
     int pris;
-    char* beskrivelse; 
+    char* beskrivelse;
 };
 
 struct kundeordre
@@ -40,13 +40,13 @@ struct lagervare firmaLager[] = {{.vareNr = 1, .pris = 27, .beskrivelse = "Panam
 
 
 
-
+//længden af lager_len beregnet ved størrelse i bit / størrelsen af et element i bit
 int lager_len = sizeof(firmaLager)/sizeof(firmaLager[0]);
 
 
 
 void print_lager(struct lagervare lager[]);
 
-void print_ordre(struct kundeordre odre[], int count);
+void print_ordre(struct kundeordre ordre[], int count);
 
-struct lagervare lager_search(struct lagervare lager[], int varenummer);
+int lager_search(int varenummer);

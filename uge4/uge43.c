@@ -42,10 +42,19 @@ int main()
 
       }
 
+      ordreCheck = 1;
 
-
+      while (ordreCheck == 1) {
         printf("Antal:\n");
-        scanf("%d", &cur_ordre[counter].antal);
+        ordreCheckHolder;
+        scanf("%d", &ordreCheckHolder);
+        if (ordreCheckHolder > 0 && ordreCheckHolder < 6) {
+          cur_ordre[counter].antal = ordreCheckHolder;
+          ordreCheck = 0;
+        } else {
+          printf("Prov igen\n");
+        }
+      }
 
         counter++;
 
