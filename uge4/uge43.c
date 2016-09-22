@@ -111,7 +111,7 @@ void print_lager(struct lagervare lager[])
 
 }
 
-
+// Gennemsøger et array vha linear search and returns index
 int lager_search(int varenummer)
 {
     for (int i = 0; i < maksBest; i++)
@@ -126,7 +126,7 @@ int lager_search(int varenummer)
     return -1; //betyder at den har fejlet
 }
 
-
+// Printer array med ordrer.
 void print_ordre(struct kundeordre ordre[], int count)
 {
     int total = 0;
