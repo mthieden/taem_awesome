@@ -11,7 +11,7 @@ Includerer relevante libraries
 */
 #include "uge41.h"
 
-struct forsendelse 
+struct forsendelse
 {
     char kat;
     float pris;
@@ -189,7 +189,7 @@ void print_ordre(struct kundeordre ordre[], int count)
         printf("%12dkr",subTotal);
         printf("\t%s\n",firmaLager[temp].beskrivelse);
         antalTotal += ordre[i].antal;
-    
+
     }
 
     //Prisen udskrives før forsendelse og evt. rabatter
@@ -197,6 +197,7 @@ void print_ordre(struct kundeordre ordre[], int count)
     //rabat og fragt beregnes efter fastsatte krav
     if(total > 500)
     {
+        total += 50;
         rabat = total * 0.1;
         total *= 0.9;
     } //end of if
@@ -211,4 +212,3 @@ void print_ordre(struct kundeordre ordre[], int count)
     printf("\n\t\trabat:%.2f\n", rabat);
     printf("\n\t\ttotal pris:%.2f\n", total);
 }
-
