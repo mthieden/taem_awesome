@@ -1,8 +1,16 @@
 #include<stdio.h>
 #include<time.h>
 
+// time_t er en type fra time.h, der indeholder tiden
 time_t rawtime;
+
+// tm er en datastruktur, der også indholder tiden
+// // til forskel fra time_t kan vi hente ønsket variable ud af tm.
+// // siden timeinfo er en pointer henter vi data ud fra den med timeinfo->tm_min 
+// // i stedet for timeinfo.tm_min
 struct tm *timeinfo;
+
+// {tændt_alarm_signal, timer, minutter }
 int alarm[] = {0,0,0};
 
 void show_time(void);
@@ -66,7 +74,10 @@ void (*menu[6])(void) = { show_time,
 
 void show_time()
 {
+    // time henter nuværende tidspunkt fra computer
     time ( &rawtime);
+
+    // localtime parser rawtime ind i timeinfo
     timeinfo = localtime ( &rawtime );
 
     if(alarm[0] == 1 && alarm[1] == timeinfo->tm_hour && alarm[2] == timeinfo->tm_min )
@@ -79,6 +90,7 @@ void show_time()
 
 void set_time(void)
 {
+    // time funktionerne bestemmer tiden udfra indstillingerne på brugerens computer 
     printf("go to your system setting and change the time\n");
 }
 
@@ -92,10 +104,20 @@ void set_alarm(void)
     scanf("%d",&alarm[2]);
 }
 
+// snooze ligger fem minutter ekstra til alarmen, og tager 
+// // højde for at der kun er 60 min på en time
 void snooze(void)
 {
-    alarm[2] = (alarm[2]+5)%60;
-    printf("Alarmen er blevet udskudt! med 5 min\n");
+    if(alarm[2]+5>=60)
+    {
+        alarm[2] = (alarm[2]+5)%60;
+        alarm[1]++;
+    }
+        else
+    {
+        alarm[2] += 5;   
+
+    }
 }
 
 void stop_alarm(void)
