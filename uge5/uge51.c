@@ -127,15 +127,32 @@ void print_ordre(struct kundeordre ordre[], int count)
     printf("\t\t________________________________________________________________\n");
     for (int i = 0; i < count; i++)
     {
+        //Vi laver en allround void pointer, vi bruger til at referere til vores struct.
+        void *ordreAllRoundPointer;
+
         temp = lager_search(ordre[i].vareNr);
         int subtotal = firmaLager[temp].pris * ordre[i].antal;
         total += subtotal;
+        //referere void pointer til vareNr
+        ordreAllRoundPointer = &ordre[i].vareNr;
+        //typecaster void pointer til en int pointer
+        printf("\t\t%2d",*(int*)ordreAllRoundPointer);
 
-        printf("\t\t%2d",ordre[i].vareNr);
-        printf("%16dkr",firmaLager[temp].pris);
-        printf("%9d",ordre[i].antal);
-        printf("%12dkr",subtotal);
-        printf("\t%s\n",firmaLager[temp].beskrivelse);
+        //samme sker næsten efterfølgende bemærk comment ved char**
+        ordreAllRoundPointer = &firmaLager[temp].pris;
+        printf("%16dkr",*(int*)ordreAllRoundPointer);
+
+        ordreAllRoundPointer = &ordre[i].antal;
+        printf("%9d",*(int*)ordreAllRoundPointer);
+
+        ordreAllRoundPointer = &subtotal;
+        printf("%12dkr",*(int*)ordreAllRoundPointer);
+
+        //her bliver der typecastet til en ((character array) pointer)
+        //dvs en "pointer pointer"
+        ordreAllRoundPointer = &firmaLager[temp].beskrivelse;
+        printf("\t%s\n",*(char**)ordreAllRoundPointer);
+
 
     }
     printf("\n\n\t\tTotal:%dkr\n", total);
