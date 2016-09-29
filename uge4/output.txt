@@ -1,0 +1,42 @@
+
+
+	Varelager:
+		varenummer  |  Pris  |  Beskrivelse
+		_____________________________________
+		1  	        27 kr	Panama papers
+		2  	        50 kr	Hillary Clintons email server
+		3  	       203 kr	Donald trumps tax returns
+		4  	        12 kr	Proof tha the moonlanding was a hoax
+		5  	         1 kr	North Korean nuklear launch codes
+		6  	        42 kr	The missing link
+		7  	      1337 kr	Doughnut holes
+		8  	        13 kr	sonic screwdriwer
+		9  	        78 kr	The lost ark
+		10  	       420 kr	Rubber docky
+		11  	      9999 kr	The lost nazi treasure
+
+		_____________________________________
+Varenummer:
+Antal:
+Vil du tilføje flere varer? (1/0)
+Varenummer:
+Antal:
+Vil du tilføje flere varer? (1/0)
+Varenummer:
+Antal:
+Vil du tilføje flere varer? (1/0)
+Varenummer:
+Antal:
+Vil du tilføje flere varer? (1/0)
+
+
+	Bestilling:
+		Varenummer  |  Pris  |  Antal  | subtotal  |    Beskrivelse
+		________________________________________________________________
+		 2              50kr        4         200kr	Hillary Clintons email server
+		 3             203kr        3         609kr	Donald trumps tax returns
+		 4              12kr        3          36kr	Proof tha the moonlanding was a hoax
+		 2              50kr        2         100kr	Hillary Clintons email server
+
+
+		Total:945kr

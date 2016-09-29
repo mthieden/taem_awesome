@@ -11,7 +11,7 @@ Includerer relevante libraries
 */
 #include "uge41.h"
 
-struct forsendelse 
+struct forsendelse
 {
     char kat;
     float pris;
@@ -96,6 +96,7 @@ int main()
   if (counter >= maksBest) {
       printf("Indkøbskurv fyldt! \nFaktura printes!\nTryk en vilkaarlig tast for at fortsaette:\n");
   }
+  bobble_sort(cur_ordre,counter);
   print_ordre(cur_ordre,counter);
 
 return 1;
@@ -121,6 +122,34 @@ void print_lager(struct lagervare lager[])
 }
 
 
+void bobble_sort(struct kundeordre array[], int length)
+{
+    int swapped = 1;
+    struct kundeordre temp;
+    while (swapped)
+    {
+        swapped = 0;
+        for(int i = 1; i < length; i++)
+        {
+            if (array[i].vareNr < array[i-1].vareNr)
+            {
+                temp = array[i];
+                array[i] = array[i-1];
+                array[i-1] = temp;
+                swapped = 1;
+            }
+
+        }
+
+    length--;
+    }
+
+}
+
+
+
+
+// Gennemsøger et array vha linear search and returns index
 int lager_search(int varenummer)
 {
     for (int i = 0; i < maksBest; i++)
@@ -135,7 +164,7 @@ int lager_search(int varenummer)
     return -1; //betyder at den har fejlet
 }
 
-
+// Printer array med ordrer.
 void print_ordre(struct kundeordre ordre[], int count)
 {
     float total = 0;
@@ -160,7 +189,7 @@ void print_ordre(struct kundeordre ordre[], int count)
         printf("%12dkr",subTotal);
         printf("\t%s\n",firmaLager[temp].beskrivelse);
         antalTotal += ordre[i].antal;
-    
+
     }
 
     //Prisen udskrives før forsendelse og evt. rabatter
@@ -182,4 +211,3 @@ void print_ordre(struct kundeordre ordre[], int count)
     printf("\n\t\trabat:%.2f\n", rabat);
     printf("\n\t\ttotal pris:%.2f\n", total);
 }
-
