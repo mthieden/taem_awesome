@@ -68,7 +68,6 @@ void (*menu[6])(void) = { show_time,
     (*menu[choice])();
 
   }//end of menuRunner
-  sluk:
   return 0;
 }//end of main
 
@@ -84,7 +83,7 @@ void show_time()
     {
         printf("ALARM!!!!!!!!!!!!!\n");
     }
-    printf("%d:%d\n",timeinfo->tm_hour, timeinfo->tm_min);
+    printf("%02d:%02d\n",timeinfo->tm_hour, timeinfo->tm_min);
 }
 
 
@@ -99,9 +98,11 @@ void set_alarm(void)
     alarm[0] = 1;
     printf("input hour\n");
     scanf("%d",&alarm[1]);
-
+    alarm[1] = alarm[1]%24; 	
     printf("input minutes\n");
     scanf("%d",&alarm[2]);
+    alarm[2] = alarm[2]%60;	
+    printf("alarm er sat til %02d:%02d\n",alarm[1],alarm[2]);
 }
 
 // snooze ligger fem minutter ekstra til alarmen, og tager 
