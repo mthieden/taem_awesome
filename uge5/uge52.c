@@ -78,7 +78,7 @@ int main()
   if (counter >= maksBest) {
       printf("Indkøbskurv fyldt! \nFaktura printes!\nTryk en vilkaarlig tast for at fortsaette:\n");
   }
-  
+
   bobble_sort(cur_ordre, counter);
   print_ordre(cur_ordre, counter);
 
@@ -122,11 +122,14 @@ int lager_search(int varenummer)
 
 void print_ordre(struct kundeordre ordre[], int count)
 {
+    FILE *filPointer;
+    filPointer = fopen("Bestilling.txt", "w");
+
     int total = 0;
     int temp;
-    printf("\n\n\tBestilling:\n");
-    printf("\t\tVarenummer  |  Pris  |  Antal  | subtotal  |    Beskrivelse\n");
-    printf("\t\t________________________________________________________________\n");
+    fprintf(filPointer,"\n\n\tBestilling:\n");
+    fprintf(filPointer,"\t\tVarenummer  |  Pris  |  Antal  | subtotal  |    Beskrivelse\n");
+    fprintf(filPointer,"\t\t________________________________________________________________\n");
     for (int i = 0; i < count; i++)
     {
         //Vi laver en allround void pointer, vi bruger til at referere til vores struct.
@@ -138,26 +141,26 @@ void print_ordre(struct kundeordre ordre[], int count)
         //referere void pointer til vareNr
         ordreAllRoundPointer = &ordre[i].vareNr;
         //typecaster void pointer til en int pointer
-        printf("\t\t%2d",*(int*)ordreAllRoundPointer);
+        fprintf(filPointer,"\t\t%2d",*(int*)ordreAllRoundPointer);
 
         //samme sker næsten efterfølgende bemærk comment ved char**
         ordreAllRoundPointer = &firmaLager[temp].pris;
-        printf("%16dkr",*(int*)ordreAllRoundPointer);
+        fprintf(filPointer,"%16dkr",*(int*)ordreAllRoundPointer);
 
         ordreAllRoundPointer = &ordre[i].antal;
-        printf("%9d",*(int*)ordreAllRoundPointer);
+        fprintf(filPointer,"%9d",*(int*)ordreAllRoundPointer);
 
         ordreAllRoundPointer = &subtotal;
-        printf("%12dkr",*(int*)ordreAllRoundPointer);
+        fprintf(filPointer,"%12dkr",*(int*)ordreAllRoundPointer);
 
         //her bliver der typecastet til en ((character array) pointer)
         //dvs en "pointer pointer"
         ordreAllRoundPointer = &firmaLager[temp].beskrivelse;
-        printf("\t%s\n",*(char**)ordreAllRoundPointer);
+        fprintf(filPointer,"\t%s\n",*(char**)ordreAllRoundPointer);
 
 
     }
-    printf("\n\n\t\tTotal:%dkr\n", total);
+    fprintf(filPointer,"\n\n\t\tTotal:%dkr\n", total);
 }
 
 void swap(struct kundeordre *a, struct kundeordre *b)
@@ -188,5 +191,3 @@ void bobble_sort(struct kundeordre *array, int length)
    }
 
 }
-
-
