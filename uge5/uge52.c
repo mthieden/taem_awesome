@@ -161,8 +161,10 @@ void print_ordre(struct kundeordre ordre[], int count)
 
     }
     fprintf(filPointer,"\n\n\t\tTotal:%dkr\n", total);
+    fclose(filPointer);
 }
 
+//swap funktion der tager 2 pointer addresser og bytter indholdet ud på dem.
 void swap(struct kundeordre *a, struct kundeordre *b)
 {
     struct kundeordre temp = *a;
@@ -170,10 +172,11 @@ void swap(struct kundeordre *a, struct kundeordre *b)
     *b = temp;
 }
 
+//bobblesort kører så længe at den ved sidste run skulle bytte noget ud, .vha swapped
+//arrays er allerede pointers, men vi minder dem lige om det alligevel jf opgaven.
 void bobble_sort(struct kundeordre *array, int length)
 {
     int swapped = 1;
-    struct kundeordre temp;
     while (swapped)
     {
         swapped = 0;
