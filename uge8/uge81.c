@@ -118,10 +118,10 @@ void llist_print(llist_t *ll)
     
     while (node_search != NULL)
     {
-        printf("name: %s ",node_search->item.name);
-        printf("acc score %d ",node_search->item.accScore);
-        printf("aus score %d ",node_search->item.ausScore);
-        printf("end score %d \n",node_search->item.endScore);
+        printf("name: %s \n",node_search->item.name);
+        printf("%s %5d ", "acc score", node_search->item.accScore);
+        printf("%20s %5d ", "aus score", node_search->item.ausScore);
+        printf("%20s %5d \n\n", "end score", node_search->item.endScore);
         
         node_search = node_search->next;
     }
@@ -130,17 +130,63 @@ void llist_print(llist_t *ll)
 }
 
 
+void read_data(char *file, llist_t *ll)
+{
+
+   // Declare File Position Pointer
+   FILE * fp;
+   fp = fopen (file, "r");
+   const_t contestant;
+   char file_input[64];
+
+   // Parse every line and save in struct array
+   while(!feof(fp))
+   {
+         // Reads to end of line, max 60 characters
+         fgets(file_input, 60, fp);
+
+         // Remove '\n' from line
+         if(iscntrl(file_input[strlen(file_input) - 1])){
+            file_input[strlen(file_input) - 1] = '\0';
+         }
+ 
+ 
+         //Tokenize r, at "," and assign to 
+         char *tokenPtr = strtok(file_input, ",");
+         strcpy(contestant.name, tokenPtr);
+ 
+         tokenPtr = strtok(NULL, ",");
+         contestant.accScore = atoi(tokenPtr);
+ 
+         tokenPtr = strtok(NULL, ",");
+         contestant.ausScore = atoi(tokenPtr);
+ 
+         tokenPtr = strtok(NULL, ",");
+         contestant.endScore = atoi(tokenPtr);
+         
+         llist_put(ll, contestant);
+            
+
+   }
+
+   fclose(fp);
+}
+
 
 
 int main(int argc, char **argv) 
 {
 
 
-
+    char *file = "data.csv";
 	llist_t ll;
 
 	llist_init(&ll);
+    read_data(file,&ll);    
 
+    llist_print(&ll); 
+    
+    /* testing the different funkctions
 	const_t val1 = {.name = "Ben and jerry", .accScore = 42, .ausScore = 432, .endScore = 1011};
 	const_t val2 = {.name = "karl johan", .accScore = 45, .ausScore = 303, .endScore = 404};
 	const_t val3 = {.name = "jensen bofhus", .accScore = 123, .ausScore = 423, .endScore = 121};
@@ -167,22 +213,6 @@ int main(int argc, char **argv)
         printf("poped %s %d %d %d \n", poped.name, poped.accScore, poped.ausScore, poped.endScore);
     }
     llist_print(&ll);
-    
-    int j = 0; 
-    
-
-    /*
-
-	llist_put(&ll, &val);
-	llist_put(&ll, &val);
-	
-    node_t *item1 = *(int *)llist_search(&ll, &val);
-	assert(42 == *(int *)llist_pop(&q, item1));
-    node_t *item2 = *(int *)llist_search(&ll, &val);
-	assert(42 == *(int *)llist_pop(&q));
-	assert(42 == *(int *)llist_pop(&q));
-	assert(NULL == llist_get(&q));
-	assert(NULL == llist_get(&q));
     */
 	return 0;
 }

@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <ctype.h>
 #include <error.h>
 #include <stdio.h>
 #include <string.h>
@@ -9,7 +10,7 @@ typedef struct contestant{
     int accScore; // Accureacy score
     int ausScore; // Aussie-Round score
     int endScore; // Endurance score
-}const_t;
+} const_t;
 
 
 typedef struct node {
