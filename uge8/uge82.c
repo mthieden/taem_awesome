@@ -8,33 +8,39 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "uge8.h"
 
 struct treeNode{
     struct treeNode *leftNodePtr;
-    int data;
+    const_t data;
     struct treeNode *rightNodePtr;
 };
 
 typedef struct treeNode TreeNode;
 
-void insertNode(TreeNode **treePtr, int dataValue);
+void insertNode(TreeNode **treePtr, int dataValue1, int );
 void inOrder(TreeNode *tree);
 
 int main()
 {
+
+    //tree initializes
     TreeNode *rootPtr = NULL;
+
 
     for (int i = 0; i < 90; i++)
     {
-        int data = i%45;
+        const_t ///////////////////////////////////////////////
         insertNode(&rootPtr, data);
-
     }
+
+
     inOrder(rootPtr);
+
     return 0;
 }
 
-void insertNode(TreeNode **treePtr, int dataValue)
+void insertNode(TreeNode **treePtr, int dataValue1)
 {
     if(*treePtr == NULL) //indholdet af yderste pointer / addressen af inderste pointer er NULL
     {
@@ -42,7 +48,7 @@ void insertNode(TreeNode **treePtr, int dataValue)
         //printf("her er jeg");
         if (*treePtr != NULL)
         {
-            (*treePtr)->data = dataValue;
+            (*treePtr)->data = dataValue1;
             (*treePtr)->rightNodePtr = NULL;
             (*treePtr)->leftNodePtr = NULL;
         }
@@ -53,17 +59,17 @@ void insertNode(TreeNode **treePtr, int dataValue)
     }
     else
     {
-        if(dataValue < (*treePtr)->data)
+        if(dataValue1 < (*treePtr)->data)
         {
-            insertNode(&((*treePtr)->leftNodePtr), dataValue);
+            insertNode(&((*treePtr)->leftNodePtr), dataValue1);
         }
-        else if (dataValue > (*treePtr)->data)
+        else if (dataValue1 > (*treePtr)->data)
         {
-            insertNode(&((*treePtr)->rightNodePtr), dataValue);
+            insertNode(&((*treePtr)->rightNodePtr), dataValue1);
         }
         else
         {
-            printf("Element \"%2d\" slettet pga dublikeret samme værdi\n", dataValue);
+            printf("Element \"%2d\" slettet pga dublikeret samme værdi\n", dataValue1);
         }
     }
 }
