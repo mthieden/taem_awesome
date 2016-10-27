@@ -13,7 +13,7 @@ void llist_init(llist_t *ll)
 	ll->head = ll->tail = new;
 }
 
-void llist_put(llist_t *ll, void *item) 
+void llist_put(llist_t *ll, const_t item) 
 {
 	node_t *new = malloc(sizeof(node_t));
 	if (new == NULL) 
@@ -21,8 +21,7 @@ void llist_put(llist_t *ll, void *item)
 		perror("malloc failed");
 		exit(EXIT_FAILURE);
 	}
-    
-	new->item = *((int*)item);
+    new->item = item;
 	new->next = NULL;
 
 	/* add the new node to the tail */
@@ -30,7 +29,7 @@ void llist_put(llist_t *ll, void *item)
 	ll->tail = new;
 }
 
-void *llist_pop(llist_t *ll, node_t *node) 
+const_t llist_pop(llist_t *ll, node_t *node) 
 {
 	node_t *old = ll->head;
    
@@ -39,7 +38,8 @@ void *llist_pop(llist_t *ll, node_t *node)
 
 	if (old->next == NULL) 
     {
-		return NULL; /* llist was empty */
+        perror("pop failed, empty list");
+        exit(EXIT_FAILURE);
 	}
     
 
@@ -50,7 +50,7 @@ void *llist_pop(llist_t *ll, node_t *node)
         if(new == node)
         {
             old->next = new->next;
-            void *item = new->item;
+            const_t item = new->item;
             free(new);
             /* update the head and free the old memory */
             return item;
@@ -66,21 +66,19 @@ void *llist_pop(llist_t *ll, node_t *node)
     exit(EXIT_FAILURE);
 }
 
-node_t *llist_search(llist_t *ll, void *item)
+node_t *llist_search(llist_t *ll, const_t item)
 {
 
     node_t *node_search = ll->head;
-    printf("searching for %d \n",*((int*)item));	
     if (node_search->next == NULL) 
     {
 		return NULL; // llist was empty 
 	}
     
-    printf("searching for %d \n",*((int*)node_search->next->next->item));	
     
     node_search = node_search->next;
-    printf("node has %d \n", *(int*)(node_search->item));
-    if(*((int *)node_search->item) == (*(int*) item))
+    
+    if(memcmp((void*)&node_search->item, (void*)&item, sizeof(const_t))==0)
     {
         return  node_search;
     }        
@@ -88,8 +86,7 @@ node_t *llist_search(llist_t *ll, void *item)
 
     while (node_search != NULL)
     {
-        printf("node has %d \n", *(int*)(node_search->item));
-        if ((*(int*)node_search->item) == (*(int*)item))
+        if(memcmp((void*)&node_search->item, (void*)&item, sizeof(const_t))==0)
         {
             return node_search;
         }
@@ -101,9 +98,8 @@ node_t *llist_search(llist_t *ll, void *item)
 
 }
 
-void *llist_pop_item(llist_t *ll, void *item )
+const_t llist_pop_item(llist_t *ll, const_t item )
 {
-    llist_print(ll);
     return llist_pop(ll, llist_search(ll, item) );
 
 }
@@ -122,7 +118,10 @@ void llist_print(llist_t *ll)
     
     while (node_search != NULL)
     {
-        printf("%d ",(*(int*)node_search->item));
+        printf("name: %s ",node_search->item.name);
+        printf("acc score %d ",node_search->item.accScore);
+        printf("aus score %d ",node_search->item.ausScore);
+        printf("end score %d \n",node_search->item.endScore);
         
         node_search = node_search->next;
     }
@@ -142,20 +141,35 @@ int main(int argc, char **argv)
 
 	llist_init(&ll);
 
-	int val1 = 41;
+	const_t val1 = {.name = "Ben and jerry", .accScore = 42, .ausScore = 432, .endScore = 1011};
+	const_t val2 = {.name = "karl johan", .accScore = 45, .ausScore = 303, .endScore = 404};
+	const_t val3 = {.name = "jensen bofhus", .accScore = 123, .ausScore = 423, .endScore = 121};
     
     for(int i = 5; i>0; i--)
     {
-	llist_put(&ll, &i);
+	    llist_put(&ll, val1);
+	    llist_put(&ll, val3);
+	    llist_put(&ll, val2);
+
     }
     puts("linked list:");
     
     llist_print(&ll);
     puts("poping elemenst list:");
-    for(int jolo = 2; jolo<7; jolo++)
+    
+    for(int i = 5; i>0; i--)
     {
-    printf("poped %d \n", *(int*)(llist_pop_item(&ll, (void*)(&jolo))));
+        const_t poped = llist_pop_item(&ll, val2);
+        printf("poped %s %d %d %d \n", poped.name, poped.accScore, poped.ausScore, poped.endScore);
+        poped = llist_pop_item(&ll, val1);
+        printf("poped %s %d %d %d \n", poped.name, poped.accScore, poped.ausScore, poped.endScore);
+        poped = llist_pop_item(&ll, val3);
+        printf("poped %s %d %d %d \n", poped.name, poped.accScore, poped.ausScore, poped.endScore);
     }
+    llist_print(&ll);
+    
+    int j = 0; 
+    
 
     /*
 
