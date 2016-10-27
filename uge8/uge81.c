@@ -5,7 +5,7 @@ void llist_init(llist_t *ll)
 	node_t *new = malloc(sizeof(node_t));
 	if (new == NULL) 
     {
-		perror("malloc failed");
+		puts("malloc failed");
 		exit(EXIT_FAILURE);
 	}
 
@@ -18,7 +18,7 @@ void llist_put(llist_t *ll, const_t item)
 	node_t *new = malloc(sizeof(node_t));
 	if (new == NULL) 
     {
-		perror("malloc failed");
+		puts("malloc failed");
 		exit(EXIT_FAILURE);
 	}
     new->item = item;
@@ -38,7 +38,7 @@ const_t llist_pop(llist_t *ll, node_t *node)
 
 	if (old->next == NULL) 
     {
-        perror("pop failed, empty list");
+        puts("pop failed, empty list");
         exit(EXIT_FAILURE);
 	}
     
@@ -62,7 +62,7 @@ const_t llist_pop(llist_t *ll, node_t *node)
 
     }
     
-    perror("pop failed, didn't find the node");
+    puts("pop failed, didn't find the node");
     exit(EXIT_FAILURE);
 }
 
@@ -110,7 +110,7 @@ void llist_print(llist_t *ll)
     
     if (node_search->next == NULL) 
     {
-        perror("print fail, tried to print a empty list");
+        puts("print fail, tried to print a empty list");
         exit(EXIT_FAILURE);
 	}
 
